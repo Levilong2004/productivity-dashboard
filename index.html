@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>生产力仪表盘</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>生产力仪表盘</h1>
+      <p class="subtitle">番茄钟 + 任务清单，专注当下</p>
+    </header>
+
+    <main class="grid">
+      <!-- 番茄钟 -->
+      <section class="card timer-card">
+        <h2>番茄钟</h2>
+        <div class="timer-display" id="timerDisplay">25:00</div>
+        <div class="timer-modes">
+          <button class="mode-btn active" data-mode="work" data-minutes="25">专注 25 分钟</button>
+          <button class="mode-btn" data-mode="short" data-minutes="5">短休 5 分钟</button>
+          <button class="mode-btn" data-mode="long" data-minutes="15">长休 15 分钟</button>
+        </div>
+        <div class="timer-controls">
+          <button id="startBtn" class="btn primary">开始</button>
+          <button id="resetBtn" class="btn">重置</button>
+        </div>
+        <div class="pomodoro-count">今日完成：<span id="pomodoroCount">0</span> 个番茄</div>
+      </section>
+
+      <!-- 任务清单 -->
+      <section class="card tasks-card">
+        <h2>任务清单</h2>
+        <div class="task-input">
+          <input type="text" id="taskInput" placeholder="添加新任务..." maxlength="100" />
+          <button id="addTaskBtn" class="btn primary">添加</button>
+        </div>
+        <ul id="taskList" class="task-list"></ul>
+        <div class="task-stats">
+          <span>总计：<span id="totalTasks">0</span></span>
+          <span>已完成：<span id="completedTasks">0</span></span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
